@@ -1,0 +1,34 @@
+<article>
+  <header>Bestellung abschließen</header>
+  <!-- Grid -->
+  <div class="grid">
+
+    <!-- Markup example 1: input is inside label -->
+    <label for="firstname">
+      Vorname
+      <input type="text" id="firstname" name="firstname" placeholder="Vorname" required>
+    </label>
+
+    <label for="lastname">
+      Nachname
+      <input type="text" id="lastname" name="lastname" placeholder="Nachname" required>
+    </label>
+
+  </div>
+
+  <!-- Markup example 2: input is after label -->
+  <label for="email" class="optional">Email Adresse</label>
+  <input type="email" id="email" name="email" placeholder="Email Adresse">
+  <label for="order-note" class="optional">Notiz</label>
+  <textarea id="order-note" name="order-note" placeholder="Notiz"></textarea>
+  <fieldset>
+    <label for="terms">
+      <input type="checkbox" id="terms" name="terms">
+      Ich stimme den Datenschutzbedingungen zu
+    </label>
+  </fieldset>
+  <footer class="flex space-between">
+    <a role="button" class="secondary" (click)="close(undefined)">Abbrechen</a>
+    <a role="button" (click)="close()">Bestellen</a>
+  </footer>
+</article>

@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="container flex baseline">
+    <img src="assets/logo.svg" />
+    <h1 (dblclick)="admin = !admin">Backwarenbestellung</h1>
+    <div class="breadcrumb">
+      <span *ngIf="stage === 0">Datumsauswahl</span>
+      <span *ngIf="stage !== 0">
+        <a routerLink="/date">Datumsauswahl</a>
+        &gt;
+        <span>Warenauswahl</span>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="spacer-top"></div>
+<router-outlet></router-outlet>
+<dlb-modal></dlb-modal>

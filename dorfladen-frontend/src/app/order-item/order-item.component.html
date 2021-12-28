@@ -1,0 +1,10 @@
+<div class="grid" *ngIf="item">
+  <div><strong>{{item?.description}}</strong></div>
+  <div class="flex count-ctrl">
+    <div class="ctext">{{item?.price | price}}</div>
+    <button (click)="add(-1)"><em class="fas fa-minus"></em></button>
+    <input type="number" [(ngModel)]="item.count" (keyup)="countUpdated()">
+    <button (click)="add(1)"><em class="fas fa-plus"></em></button>
+    <div class="ctext">{{item.price * (item.count || 0) | price }}</div>
+  </div>
+</div>

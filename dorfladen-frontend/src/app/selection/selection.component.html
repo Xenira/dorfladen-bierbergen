@@ -1,0 +1,25 @@
+<div class="main">
+  <div class="container">
+    <article *ngFor="let category of categories">
+      <header>
+        <em class="fas fa-{{category.categoryIcon}}"></em> {{category.title}}
+      </header>
+      <div>
+        <dlb-order-item *ngFor="let item of category.items" [item]="item"></dlb-order-item>
+      </div>
+    </article>
+  </div>
+</div>
+<article class="footer">
+  <div class="grid">
+    <div>Gesammt</div>
+    <div></div>
+    <div><span *ngIf="totalCount()">{{totalCount()}} stk.</span></div>
+    <div><u>{{totalPrice() | price}}</u></div>
+  </div>
+  <div class="flex">
+    <button class="secondary outline" (click)="reset()">Zurücksetzen</button>
+    <div class="spacer"></div>
+    <button (click)="order()">Bestellen</button>
+  </div>
+</article>

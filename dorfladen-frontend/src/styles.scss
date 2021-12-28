@@ -1,0 +1,46 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 578px,
+  lg: 580px,
+  xl: 1200px,
+);
+
+/* You can add global styles to this file, and also import other style files */
+@import "~@picocss/pico/scss/pico.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+
+html, body {
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.baseline {
+  align-items: baseline;
+}
+
+.grow {
+  flex: 1;
+}
+
+.spacer {
+  margin: 8px;
+}
+
+.ctext {
+  text-align: center;
+}
+
+label.optional::after {
+  content: ' - Optional';
+  font-size: small;
+  color: var(--muted-color);
+}

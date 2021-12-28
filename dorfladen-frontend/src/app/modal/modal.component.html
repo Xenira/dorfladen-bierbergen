@@ -1,0 +1,8 @@
+<div *ngFor="let modal of modalService.modals; let i = index" (click)="closeModal($event)" [style.z-index]="10 + i"
+  class="backdrop">
+  <div class="container">
+    <div (click)="modalClicked($event)">
+      <template #modalTemplate></template>
+    </div>
+  </div>
+</div>

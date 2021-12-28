@@ -1,0 +1,27 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+}
+
+img {
+  height: 64px;
+  display: inline-block;
+}
+
+h1 {
+  margin-bottom: 16px;
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.spacer-top {
+  height: 148px;
+}
+
+.breadcrumb {
+  margin-left: 1rem;
+  display: inline-block;
+}

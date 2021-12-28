@@ -1,0 +1,27 @@
+<div class="container">
+  <article>
+    <label for="date">Datum
+      <input type="date" id="date" name="date" [min]="minDate" [(ngModel)]="startDate">
+    </label>
+
+    <fieldset>
+      <label for="abo">
+        <input type="checkbox" id="abo" name="abo" role="switch" [(ngModel)]="isAbo" (change)="lengthChange()">
+        Als Abo
+      </label>
+    </fieldset>
+    <div *ngIf="isAbo">
+      <label for="abo-length">Abo länge (Wochen)</label>
+      <input type="number" id="abo-length" name="abo-length" min="1" [(ngModel)]="aboLength" (change)="lengthChange()" required>
+    </div>
+    <div *ngIf="isAbo && startDate && aboLength">
+      <div *ngFor="let item of aboWeeks; let i = index">
+        <dlb-week-select [date]="item.date" [(selected)]="item.days"></dlb-week-select>
+      </div>
+    </div>
+  </article>
+</div>
+<article class="footer" *ngIf="startDate">
+  <button *ngIf="isAbo" (click)="selectProducts()">Produkte für {{totalDays()}} Tage auswählen</button>
+  <button *ngIf="!isAbo" (click)="selectProducts()">Produkte auswählen</button>
+</article>
