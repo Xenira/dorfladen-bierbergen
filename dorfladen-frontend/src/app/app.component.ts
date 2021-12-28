@@ -15,13 +15,13 @@ export class AppComponent implements OnInit {
   admin = false;
   stage = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.router.events.pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
         .subscribe((event) => {
             console.log(event['url']);
-            // console.log(this.route.firstChild.routeConfig.path);
+            console.log(this.route.firstChild?.routeConfig?.path);
             this.stage = event['url'] === '/date' ? 0 : 1
         });
   }

@@ -25,3 +25,10 @@ h1 {
   margin-left: 1rem;
   display: inline-block;
 }
+
+mark {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  opacity: .4;
+}
