@@ -15,7 +15,7 @@ export class SelectionComponent implements OnInit {
 
   categories: ICategory[] = [];
 
-  constructor(private itemService: ItemService, private orderService: OrderService, private router: Router, private modalService: ModalService) {}
+  constructor(private itemService: ItemService, public orderService: OrderService, private router: Router, private modalService: ModalService) {}
 
   ngOnInit(): void {
     if (!this.orderService.days.length) {
@@ -35,7 +35,8 @@ export class SelectionComponent implements OnInit {
   }
 
   totalPrice(): number {
-    return this.allItems().reduce((prev, curr) => prev + (curr.count || 0) * curr.price, 0);
+    const days = this.orderService.days.length;
+    return this.allItems().reduce((prev, curr) => prev + (curr.count || 0) * curr.price, 0) * days;
   }
 
   reset(): void {
