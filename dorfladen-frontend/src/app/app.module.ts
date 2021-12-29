@@ -15,6 +15,8 @@ import { ConfirmationModalComponent } from './modals/confirmation-modal/confirma
 import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
 import { NumberInputComponent } from './number-input/number-input.component';
 import { ValidDirective } from './valid.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,12 @@ import { ValidDirective } from './valid.directive';
     NumberInputComponent,
     ValidDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: environment.production,
+  // Register the ServiceWorker as soon as the app is stable
+  // or after 30 seconds (whichever comes first).
+  registrationStrategy: 'registerWhenStable:30000'
+})],
   providers: [],
   bootstrap: [AppComponent],
 })
