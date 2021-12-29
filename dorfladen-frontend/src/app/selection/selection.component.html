@@ -16,11 +16,11 @@
     <div></div>
     <div><span *ngIf="totalCount()">{{totalCount()}} stk.</span></div>
     <div *ngIf="orderService.days.length > 1"><span *ngIf="totalCount()">x {{orderService.days.length}} tage</span></div>
-    <div><u>{{totalPrice() | price}}</u></div>
+    <strong><u>{{totalPrice() | price}}</u></strong>
   </div>
   <div class="flex">
     <button class="secondary outline" (click)="reset()">Zurücksetzen</button>
     <div class="spacer"></div>
-    <button (click)="order()">Bestellen</button>
+    <button (click)="order()" [disabled]="!totalCount()">Bestellen</button>
   </div>
 </article>

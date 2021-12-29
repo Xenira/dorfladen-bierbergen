@@ -1,4 +1,4 @@
-<div class="flex space-between center-align">
+<div class="flex wrap-row space-between center-align">
   <div class="date">{{date?.startOf('week')?.toLocaleString()}} - {{date?.endOf('week')?.toLocaleString()}}</div>
   <div>
     <a role="button" [class.outline]="!this.selected?.includes(1)" (click)="toggle(1)" data-tooltip="Montag">M</a>

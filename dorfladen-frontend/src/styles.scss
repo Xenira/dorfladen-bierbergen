@@ -27,12 +27,18 @@ html, body {
   align-items: baseline;
 }
 
-.center-align {
-  align-items: center;
+@media (max-width: map-get($breakpoints, "lg")) {
+  .wrap-row {
+    flex-direction: column;
+  }
 }
 
 .grow {
   flex: 1;
+}
+
+.center-align {
+  align-items: center;
 }
 
 .spacer {
