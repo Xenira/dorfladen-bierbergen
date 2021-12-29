@@ -1,5 +1,5 @@
-<div class="flex space-between">
-  <div>{{date?.startOf('week')?.toLocaleString()}} - {{date?.endOf('week')?.toLocaleString()}}</div>
+<div class="flex space-between center-align">
+  <div class="date">{{date?.startOf('week')?.toLocaleString()}} - {{date?.endOf('week')?.toLocaleString()}}</div>
   <div>
     <a role="button" [class.outline]="!this.selected?.includes(1)" (click)="toggle(1)" data-tooltip="Montag">M</a>
     <a role="button" [class.outline]="!this.selected?.includes(2)" (click)="toggle(2)" data-tooltip="Dienstag">D</a>

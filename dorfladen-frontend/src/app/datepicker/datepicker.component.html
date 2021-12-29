@@ -10,12 +10,12 @@
         Als Abo
       </label>
     </fieldset>
-    <div *ngIf="isAbo">
+    <p *ngIf="isAbo">
       <label for="abo-length">Abo länge (Wochen)</label>
-      <input type="number" id="abo-length" name="abo-length" min="1" [(ngModel)]="aboLength" (change)="lengthChange()" required>
-    </div>
+      <dlb-number-input id="abo-length" name="abo-length" [(value)]="aboLength" [min]="1"></dlb-number-input>
+    </p>
     <div *ngIf="isAbo && startDate && aboLength">
-      <div *ngFor="let item of aboWeeks; let i = index">
+      <div *ngFor="let item of aboWeeks; let i = index" [class.odd]="i % 2 !== 0">
         <dlb-week-select [date]="item.date" [(selected)]="item.days"></dlb-week-select>
       </div>
     </div>

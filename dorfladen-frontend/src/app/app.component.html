@@ -1,8 +1,8 @@
 <mark #demo>Dies ist eine DEMO. Es können keine Bestellungen aufgegeben werden!</mark>
 <div class="header">
   <div class="container flex baseline">
-    <img src="assets/logo.svg" />
-    <h1 (dblclick)="admin = !admin">Backwarenbestellung</h1>
+    <img (dblclick)="admin = !admin" src="assets/logo.svg" />
+    <h1 [class.admin]="admin">Backwarenbestellung</h1>
     <div class="breadcrumb">
       <span *ngIf="stage === 0">Datumsauswahl</span>
       <span *ngIf="stage !== 0">

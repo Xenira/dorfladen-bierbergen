@@ -18,7 +18,14 @@ export class DatepickerComponent implements OnInit {
   minDate = DateTime.now().plus({ days: 1 }).toISODate();
   isAbo = false;
   startDate?: string = undefined;
-  aboLength = 4;
+  private _aboLength = 4;
+  set aboLength(value: number) {
+    this._aboLength = value;
+    this.lengthChange();
+  }
+  get aboLength(): number {
+    return this._aboLength;
+  }
   aboWeeks: AboWeek[] = [];
 
   constructor(private orderService: OrderService, private router: Router) {}
@@ -26,7 +33,7 @@ export class DatepickerComponent implements OnInit {
   ngOnInit(): void {}
 
   lengthChange(): void {
-    if (!this.startDate) {
+    if (!this.startDate || !this.aboLength) {
       return;
     }
     const startDate = DateTime.fromISO(this.startDate);

@@ -12,6 +12,8 @@ import { SelectionComponent } from './selection/selection.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { WeekSelectComponent } from './week-select/week-select.component';
 import { ConfirmationModalComponent } from './modals/confirmation-modal/confirmation-modal.component';
+import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
+import { NumberInputComponent } from './number-input/number-input.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ConfirmationModalComponent } from './modals/confirmation-modal/confirma
     SelectionComponent,
     DatepickerComponent,
     WeekSelectComponent,
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    AdminMenuComponent,
+    NumberInputComponent
   ],
   imports: [
     BrowserModule,

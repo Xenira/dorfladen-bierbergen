@@ -4,9 +4,9 @@
       <header>
         <em class="fas fa-{{category.categoryIcon}}"></em> {{category.title}}
       </header>
-      <div>
-        <dlb-order-item *ngFor="let item of category.items" [item]="item"></dlb-order-item>
-      </div>
+      <p *ngFor="let item of category.items">
+        <dlb-order-item  [item]="item"></dlb-order-item>
+      </p>
     </article>
   </div>
 </div>
