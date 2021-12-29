@@ -1,7 +1,13 @@
 .count-ctrl {
+  min-width: 20rem;
   .ctext {
     margin-left: 8px;
     margin-right: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
     white-space: nowrap;
+  }
+  .price {
+    margin-right: 1.5rem;
   }
 }

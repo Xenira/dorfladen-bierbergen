@@ -1,7 +1,7 @@
-<div class="grid" *ngIf="item">
+<div class="flex space-between" *ngIf="item">
   <div><strong>{{item?.description}}</strong></div>
   <div class="flex count-ctrl">
-    <div class="ctext">{{item?.price | price}}</div>
+    <div class="ctext price">{{item?.price | price}}</div>
     <dlb-number-input [(value)]="item.count" [min]="0"></dlb-number-input>
     <div class="grow"></div>
     <div class="ctext">{{item.price * (item.count || 0) | price }}</div>
