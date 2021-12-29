@@ -1,4 +1,4 @@
-<article>
+<article [formGroup]="orderForm">
   <header>Bestellung abschließen</header>
   <!-- Grid -->
   <div class="grid">
@@ -6,29 +6,31 @@
     <!-- Markup example 1: input is inside label -->
     <label for="firstname">
       Vorname
-      <input type="text" id="firstname" name="firstname" placeholder="Vorname" required>
+      <input type="text" id="firstname" name="firstname" placeholder="Vorname" formControlName="firstName" dlbValid required>
     </label>
 
     <label for="lastname">
       Nachname
-      <input type="text" id="lastname" name="lastname" placeholder="Nachname" required>
+      <input type="text" id="lastname" name="lastname" placeholder="Nachname" formControlName="lastName" dlbValid required>
     </label>
 
   </div>
 
   <!-- Markup example 2: input is after label -->
   <label for="email" class="optional">Email Adresse</label>
-  <input type="email" id="email" name="email" placeholder="Email Adresse">
+  <input type="email" id="email" name="email" formControlName="email" dlbValid placeholder="Email Adresse">
   <label for="order-note" class="optional">Notiz</label>
-  <textarea id="order-note" name="order-note" placeholder="Notiz"></textarea>
+  <textarea id="order-note" name="order-note" formControlName="note" dlbValid placeholder="Notiz"></textarea>
   <fieldset>
     <label for="terms">
-      <input type="checkbox" id="terms" name="terms">
+      <input type="checkbox" id="terms" name="terms" dlbValid formControlName="privacy">
       Ich stimme den Datenschutzbedingungen zu
     </label>
   </fieldset>
-  <footer class="flex space-between">
-    <a role="button" class="secondary" (click)="close(undefined)">Abbrechen</a>
-    <a role="button" (click)="close()">Bestellen</a>
+  <footer>
+    <div class="grid">
+      <button role="button" class="secondary" (click)="close(undefined)">Abbrechen</button>
+      <button (click)="close()" [disabled]="orderForm.invalid">Bestellen</button>
+    </div>
   </footer>
 </article>

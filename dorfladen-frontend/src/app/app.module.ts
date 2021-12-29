@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { WeekSelectComponent } from './week-select/week-select.component';
 import { ConfirmationModalComponent } from './modals/confirmation-modal/confirmation-modal.component';
 import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
 import { NumberInputComponent } from './number-input/number-input.component';
+import { ValidDirective } from './valid.directive';
 
 @NgModule({
   declarations: [
@@ -27,14 +28,11 @@ import { NumberInputComponent } from './number-input/number-input.component';
     WeekSelectComponent,
     ConfirmationModalComponent,
     AdminMenuComponent,
-    NumberInputComponent
+    NumberInputComponent,
+    ValidDirective,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
