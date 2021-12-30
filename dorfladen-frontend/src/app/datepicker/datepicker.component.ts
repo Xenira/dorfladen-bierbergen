@@ -1,8 +1,8 @@
-import { WeekDay } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DateTime, WeekdayNumbers } from 'luxon';
-import { OrderService } from '../order.service';
+import { InactivityService } from '../common/services/inactivity.service';
+import { OrderService } from '../common/services/order.service';
 
 interface AboWeek {
   date: DateTime;
@@ -17,7 +17,18 @@ interface AboWeek {
 export class DatepickerComponent implements OnInit {
   minDate = DateTime.now().plus({ days: 1 }).toISODate();
   isAbo = false;
-  startDate?: string = undefined;
+
+  private _startDate?: string;
+  set startDate(value: string | undefined) {
+    this._startDate = value;
+    if (this._startDate) {
+      this.inactivityService.start();
+    }
+  }
+  get startDate(): string | undefined {
+    return this._startDate;
+  }
+
   private _aboLength = 4;
   set aboLength(value: number) {
     this._aboLength = value;
@@ -26,9 +37,14 @@ export class DatepickerComponent implements OnInit {
   get aboLength(): number {
     return this._aboLength;
   }
+
   aboWeeks: AboWeek[] = [];
 
-  constructor(private orderService: OrderService, private router: Router) {}
+  constructor(
+    private orderService: OrderService,
+    private router: Router,
+    private inactivityService: InactivityService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -46,6 +62,7 @@ export class DatepickerComponent implements OnInit {
             }),
             days: [startDate.weekday],
           };
+
       this.aboWeeks.push({
         date: lastWeek.date.plus({ week: 1 }),
         days: JSON.parse(JSON.stringify(lastWeek.days)),
@@ -77,6 +94,6 @@ export class DatepickerComponent implements OnInit {
         : [DateTime.fromISO(this.startDate)]
     );
 
-    this.router.navigateByUrl('/select')
+    this.router.navigateByUrl('/select');
   }
 }

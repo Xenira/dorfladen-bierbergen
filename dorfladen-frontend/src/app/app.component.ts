@@ -7,9 +7,6 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { ICategory, IItem, ItemService } from './item.service';
-import { ModalService } from './modal/modal.service';
-import { OrderModalComponent } from './modals/order-modal/order-modal.component';
 
 @Component({
   selector: 'dlb-root',
