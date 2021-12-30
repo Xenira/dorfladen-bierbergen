@@ -1,1 +1,1 @@
-<span *ngIf="time && time < minTime">{{time | timer}}</span>
+<div [class.hidden]="!time || time > minTime" class="spacer timer"><span *ngIf="time">{{time | timer}}</span></div>

@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   background-color: var(--background-color);
+  border-bottom: 1px solid var(--secondary);
 }
 
 img {
@@ -35,4 +36,10 @@ mark {
 
 .admin {
   color: red;
+}
+
+a[role="button"].unclickable,
+button.unclickable {
+  cursor: unset;
+  pointer-events: none;
 }
