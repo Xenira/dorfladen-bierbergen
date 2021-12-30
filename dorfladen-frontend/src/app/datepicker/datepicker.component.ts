@@ -23,6 +23,7 @@ export class DatepickerComponent implements OnInit {
     this._startDate = value;
     if (this._startDate) {
       this.inactivityService.start();
+      this.recalculateDates(this._startDate);
     }
   }
   get startDate(): string | undefined {
@@ -47,6 +48,31 @@ export class DatepickerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+
+  public cancel(): void {
+    this.startDate = undefined;
+    this.aboWeeks = [];
+    this.aboLength = 4;
+    this.isAbo = false;
+    this.inactivityService.stop();
+  }
+
+  public recalculateDates(newDate: string): void {
+    if (this.aboWeeks.length === 0) {
+      this.lengthChange();
+    }
+    if (this.aboWeeks.length === 0) {
+      return;
+    }
+
+    const newDateTime = DateTime.fromISO(newDate);
+    const firstDate = this.aboWeeks[0].date;
+    const diff = newDateTime.diff(firstDate);
+
+    this.aboWeeks.forEach((w) => {
+      w.date = w.date.plus(diff);
+    });
+  }
 
   lengthChange(): void {
     if (!this.startDate || !this.aboLength) {

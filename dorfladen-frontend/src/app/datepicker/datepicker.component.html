@@ -21,7 +21,9 @@
     </div>
   </article>
 </div>
-<article class="footer" *ngIf="startDate">
+<article class="footer flex space-between" *ngIf="startDate">
+  <button *ngIf="startDate" class="secondary outline" (click)="cancel()">Abbrechen</button>
+  <div class="spacer"></div>
   <button *ngIf="isAbo" (click)="selectProducts()">Produkte für {{totalDays()}} Tage auswählen</button>
   <button *ngIf="!isAbo" (click)="selectProducts()">Produkte auswählen</button>
 </article>
