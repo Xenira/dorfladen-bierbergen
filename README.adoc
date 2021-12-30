@@ -1,0 +1,32 @@
+= Backwarenbestellung für Dorfladen Bierbergen
+:icons: font
+
+WARNING: WIP. Not functional DEMO. Everzthing subject to change
+
+== Features
+- [x] Select date and order for multiple dates in advance
+- [x] Dynamic display of items
+- [x] Price calculation for entire order
+- [x] Install as app
+- [x] Offline mode (Only frontend)
+- [ ] Barcode generation (Partly implemented)
+- [ ] Backend
+- [ ] Generate Excel reports
+- [ ] Print order forms for bags
+- [ ] Generate order for supplier
+- [ ] Add normal instore quantities to order
+
+== Advantages
+.Advantages (MVP)
+- Changing available items without reprinting order forms
+- No possibility of ordering items not available on selected date
+- Order via QR
+- Confirm supplier invoice
+
+
+.Advantages (future)
+- Login via QR
+** Re-Order past item selection
+** No need to re-enter user data
+- Online order
+- Pay via paypal

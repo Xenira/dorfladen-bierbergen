@@ -1,0 +1,31 @@
+
+  
+{
+	"name": "dorfladen-bierbergen",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"postinstall": "npm i --prefix ./dorfladen-backend --also=dev && npm i --prefix ./dorfladen-frontend --also=dev",
+		"heroku-postbuild": "npm run build:backend && npm run build:frontend && npm run install-dependencies",
+		"build:backend": "npm run build --prefix ./dorfladen-backend",
+		"build:frontend": "npm run build --prefix ./dorfladen-frontend",
+		"install-dependencies": "cp dorfladen-backend/package.json dist && cp dorfladen-backend/package-lock.json dist && npm i --prefix ./dist",
+		"heroku-cleanup": "rm -rf dorfladen-frontend && rm -rf dorfladen-backend",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"cacheDirectories": [
+		"dorfladen-frontend/node_modules",
+		"dorfladen-backend/node_modules"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Xenira/dorfladen-bierbergen.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Xenira/dorfladen-bierbergen/issues"
+	},
+	"homepage": "https://github.com/Xenira/dorfladen-bierbergen"
+}
