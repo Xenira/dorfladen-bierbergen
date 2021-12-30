@@ -9,7 +9,7 @@
 		"postinstall": "npm i --prefix ./dorfladen-backend --also=dev && npm i --prefix ./dorfladen-frontend --also=dev",
 		"heroku-postbuild": "npm run build:backend && npm run build:frontend && npm run install-dependencies",
 		"build:backend": "npm run build --prefix ./dorfladen-backend",
-		"build:frontend": "npm run build --prefix ./dorfladen-frontend",
+		"build:frontend": "npm run build --prefix ./dorfladen-frontend && mkdir dist/src/static && cp dorfladen-frontend/dist/dorfladen-frontend/* dist/src/static",
 		"install-dependencies": "cp dorfladen-backend/package.json dist && cp dorfladen-backend/package-lock.json dist && npm i --prefix ./dist",
 		"heroku-cleanup": "rm -rf dorfladen-frontend && rm -rf dorfladen-backend",
 		"test": "echo \"Error: no test specified\" && exit 1"
