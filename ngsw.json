@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1640821260605,
+  "timestamp": 1640884573183,
   "index": "https://xenira.github.io/dorfladen-bierbergen/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://xenira.github.io/dorfladen-bierbergen/favicon.ico",
         "https://xenira.github.io/dorfladen-bierbergen/index.html",
-        "https://xenira.github.io/dorfladen-bierbergen/main.81fe6db7c6df5bdf.js",
+        "https://xenira.github.io/dorfladen-bierbergen/main.4b0e1550c035e9da.js",
         "https://xenira.github.io/dorfladen-bierbergen/manifest.webmanifest",
         "https://xenira.github.io/dorfladen-bierbergen/polyfills.91715c8db71f8c3b.js",
         "https://xenira.github.io/dorfladen-bierbergen/runtime.5668b9b4e9ba8c30.js",
@@ -29,7 +29,6 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://xenira.github.io/dorfladen-bierbergen/assets/barcode.png",
         "https://xenira.github.io/dorfladen-bierbergen/assets/icons/apple-touch-icon.png",
         "https://xenira.github.io/dorfladen-bierbergen/assets/icons/icon-128x128.png",
         "https://xenira.github.io/dorfladen-bierbergen/assets/icons/icon-144x144.png",
@@ -51,7 +50,6 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://xenira.github.io/dorfladen-bierbergen/assets/barcode.png": "19f7dafaed7482824ba6564c4f9042eb6f862dce",
     "https://xenira.github.io/dorfladen-bierbergen/assets/icons/apple-touch-icon.png": "474d2a4d182583802f9b77b5db9b81dfb3fd2395",
     "https://xenira.github.io/dorfladen-bierbergen/assets/icons/icon-128x128.png": "0bcac0fc17793332de144e2b850e5400f06a8609",
     "https://xenira.github.io/dorfladen-bierbergen/assets/icons/icon-144x144.png": "41f71f39d2948c9bacdd2707313a729e2da41193",
@@ -68,8 +66,8 @@
     "https://xenira.github.io/dorfladen-bierbergen/fa-solid-900.d5b0a3566b352ee9.ttf": "eb8914f6b1797b45ee0883e6089d92695d9f9441",
     "https://xenira.github.io/dorfladen-bierbergen/fa-solid-900.e67670b0779338ff.woff": "a22acd7697f36e7d4cc31a853c70e776eac54bb1",
     "https://xenira.github.io/dorfladen-bierbergen/favicon.ico": "a804895d8ace06fdc44904d58d5f6f8fe4488c7d",
-    "https://xenira.github.io/dorfladen-bierbergen/index.html": "08c7dc9a7c57b0e316c1e6d1f3bcad100e5d5f02",
-    "https://xenira.github.io/dorfladen-bierbergen/main.81fe6db7c6df5bdf.js": "917aa24251cd40405078e5301a2cb886e4b59de9",
+    "https://xenira.github.io/dorfladen-bierbergen/index.html": "bad83c522ee8e5cbd7f8643b7ebbb65c56314c12",
+    "https://xenira.github.io/dorfladen-bierbergen/main.4b0e1550c035e9da.js": "2045620ec1cac2262126850e886e8b99bd7b8af0",
     "https://xenira.github.io/dorfladen-bierbergen/manifest.webmanifest": "f59cb522db273664a5e02f9bfc651ee525627926",
     "https://xenira.github.io/dorfladen-bierbergen/polyfills.91715c8db71f8c3b.js": "29a593a524e9276e21635a6c03b87e3256dfcf30",
     "https://xenira.github.io/dorfladen-bierbergen/runtime.5668b9b4e9ba8c30.js": "7cb708d4ecdff4313bab148e5c641d5e776d6205",
