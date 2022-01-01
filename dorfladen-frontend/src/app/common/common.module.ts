@@ -4,10 +4,17 @@ import { PricePipe } from './pipes/price.pipe';
 import { ValidDirective } from './directives/valid.directive';
 import { TimerComponent } from './components/timer/timer.component';
 import { TimerPipe } from './pipes/timer.pipe';
+import { QrScannerComponent } from './components/qr-scanner/qr-scanner.component';
 
 @NgModule({
-  declarations: [PricePipe, ValidDirective, TimerComponent, TimerPipe],
+  declarations: [
+    PricePipe,
+    ValidDirective,
+    TimerComponent,
+    TimerPipe,
+    QrScannerComponent,
+  ],
   imports: [NgCommonModule],
-  exports: [PricePipe, ValidDirective, TimerComponent],
+  exports: [PricePipe, ValidDirective, TimerComponent, QrScannerComponent],
 })
 export class CommonModule {}

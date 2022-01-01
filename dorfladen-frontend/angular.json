@@ -39,7 +39,7 @@
             "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
-            "production": {
+            "online": {
               "budgets": [
                 {
                   "type": "initial",
@@ -55,7 +55,28 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.online.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "store": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.store.ts"
                 }
               ],
               "outputHashing": "all"

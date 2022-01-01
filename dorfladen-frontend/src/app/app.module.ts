@@ -16,6 +16,7 @@ import { NumberInputComponent } from './number-input/number-input.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CommonModule } from './common/common.module';
+import { QrScanModalComponent } from './modals/qr-scan-modal/qr-scan-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CommonModule } from './common/common.module';
     ConfirmationModalComponent,
     AdminMenuComponent,
     NumberInputComponent,
+    QrScanModalComponent,
   ],
   imports: [
     BrowserModule,

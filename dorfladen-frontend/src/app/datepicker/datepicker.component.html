@@ -20,6 +20,9 @@
       </div>
     </div>
   </article>
+
+  <button (click)="scanQr()"><em class="fas fa-qrcode"></em>
+    QR-Code scannen</button>
 </div>
 <article class="footer flex space-between" *ngIf="startDate">
   <button *ngIf="startDate" class="secondary outline" (click)="cancel()">Abbrechen</button>

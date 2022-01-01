@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { QRCode } from 'jsqr';
 import { DateTime, WeekdayNumbers } from 'luxon';
 import { InactivityService } from '../common/services/inactivity.service';
 import { OrderService } from '../common/services/order.service';
+import { ModalService } from '../modal/modal.service';
+import { QrScanModalComponent } from '../modals/qr-scan-modal/qr-scan-modal.component';
+import { environment } from '../../environments/environment';
 
 interface AboWeek {
   date: DateTime;
@@ -17,6 +21,7 @@ interface AboWeek {
 export class DatepickerComponent implements OnInit {
   minDate = DateTime.now().plus({ days: 1 }).toISODate();
   isAbo = false;
+  environment = environment;
 
   private _startDate?: string;
   set startDate(value: string | undefined) {
@@ -44,7 +49,8 @@ export class DatepickerComponent implements OnInit {
   constructor(
     private orderService: OrderService,
     private router: Router,
-    private inactivityService: InactivityService
+    private inactivityService: InactivityService,
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {}
@@ -121,5 +127,13 @@ export class DatepickerComponent implements OnInit {
     );
 
     this.router.navigateByUrl('/select');
+  }
+
+  scanQr(): void {
+    this.modalService
+      .openModal<QrScanModalComponent, QRCode>(QrScanModalComponent)
+      .subscribe((code) => {
+        console.log(code);
+      });
   }
 }

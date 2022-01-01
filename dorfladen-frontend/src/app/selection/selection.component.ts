@@ -55,6 +55,7 @@ export class SelectionComponent implements OnInit {
   }
 
   order(): void {
+    this.orderService.items = this.allItems().filter((i) => i.count);
     this.modalService
       .openModal<OrderModalComponent, void>(OrderModalComponent, {})
       .subscribe(() => {

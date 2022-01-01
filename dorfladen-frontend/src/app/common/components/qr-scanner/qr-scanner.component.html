@@ -1,0 +1,3 @@
+<div *ngIf="scanning === undefined" aria-busy="true"><em class="fas fa-video"></em> Lade Video...</div>
+<video #video hidden></video>
+<canvas #canvas [hidden]="!scanning"></canvas>
