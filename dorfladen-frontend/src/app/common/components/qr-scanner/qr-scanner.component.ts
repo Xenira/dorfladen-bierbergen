@@ -47,9 +47,8 @@ export class QrScannerComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   startVideo(): void {
-    // Use facingMode: environment to attemt to get the front camera on phones
     navigator.mediaDevices
-      .getUserMedia({ video: { facingMode: 'environment' } })
+      .getUserMedia({ video: { facingMode: 'user' } })
       .then((stream) => {
         if (!this.video) {
           return;
