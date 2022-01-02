@@ -1,0 +1,2 @@
+<div *ngIf="alert" [class]="'alert ' + getClass()" [@fadeInDownOnEnter] [@fadeOutUpOnLeave]><em *ngIf="alert.icon"
+    class="fas fa-{{alert.icon}}"></em>{{alert.text}}</div>

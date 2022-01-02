@@ -7,6 +7,13 @@ import { OrderService } from '../common/services/order.service';
 import { ModalService } from '../modal/modal.service';
 import { QrScanModalComponent } from '../modals/qr-scan-modal/qr-scan-modal.component';
 import { environment } from '../../environments/environment';
+import { AlertService } from '../common/services/alert.service';
+import {
+  fadeOutLeftAnimation,
+  slideInRightOnEnterAnimation,
+  slideInUpOnEnterAnimation,
+} from 'angular-animations';
+import { AnimationEvent } from '@angular/animations';
 
 interface AboWeek {
   date: DateTime;
@@ -17,11 +24,17 @@ interface AboWeek {
   selector: 'dlb-datepicker',
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.scss'],
+  animations: [
+    slideInRightOnEnterAnimation(),
+    fadeOutLeftAnimation({ duration: 400 }),
+    slideInUpOnEnterAnimation({ duration: 600 }),
+  ],
 })
 export class DatepickerComponent implements OnInit {
   minDate = DateTime.now().plus({ days: 1 }).toISODate();
   isAbo = false;
   environment = environment;
+  slideOut = false;
 
   private _startDate?: string;
   set startDate(value: string | undefined) {
@@ -50,7 +63,8 @@ export class DatepickerComponent implements OnInit {
     private orderService: OrderService,
     private router: Router,
     private inactivityService: InactivityService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private alertService: AlertService
   ) {}
 
   ngOnInit(): void {}
@@ -125,8 +139,13 @@ export class DatepickerComponent implements OnInit {
           }, [])
         : [DateTime.fromISO(this.startDate)]
     );
+    this.slideOut = true;
+  }
 
-    this.router.navigateByUrl('/select');
+  navigate(event: AnimationEvent) {
+    if (event.toState) {
+      this.router.navigateByUrl('/select');
+    }
   }
 
   scanQr(): void {
@@ -134,6 +153,11 @@ export class DatepickerComponent implements OnInit {
       .openModal<QrScanModalComponent, QRCode>(QrScanModalComponent)
       .subscribe((code) => {
         console.log(code);
+        if (code) {
+          this.alertService.info('QR-Code erfolgreich gelesen.');
+        } else {
+          this.alertService.warn('QR-Code nicht gelesen.');
+        }
       });
   }
 }

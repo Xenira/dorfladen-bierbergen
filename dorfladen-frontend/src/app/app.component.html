@@ -1,29 +1,32 @@
 <mark #demo>Dies ist eine DEMO. Es können keine Bestellungen aufgegeben werden!</mark>
-<div class="header">
-  <div class="container">
-    <nav>
-      <ul>
-        <li><img (dblclick)="admin = !admin" src="assets/logo.svg" /></li>
-        <li class="hide-md"><strong [class.admin]="admin">Backwarenbestellung</strong></li>
-      </ul>
-      <ul *ngIf="stage === 0">
-        <li><a role="button" class="unclickable" *ngIf="stage === 0"><em class="fas fa-calendar-day"></em></a></li>
-        <li><em class="fas fa-caret-right spacer"></em></li>
-        <li><a role="button" class="unclickable outline secondary"><em class="fas fa-shopping-cart"></em></a></li>
-      </ul>
-      <ul *ngIf="stage !== 0">
-        <li><a role="button" class="outline" routerLink="/date" aria-invalid="false"><em
-              class="fas fa-calendar-day"></em></a></li>
-        <li><em class="fas fa-caret-right spacer"></em></li>
-        <li><a role="button" class="unclickable"><em class="fas fa-shopping-cart"></em></a></li>
-      </ul>
-      <ul>
-        <li>
-          <dlb-timer></dlb-timer>
-        </li>
-      </ul>
-    </nav>
+<div class="header-container">
+  <div class="header">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><img (dblclick)="admin = !admin" src="assets/logo.svg" /></li>
+          <li class="hide-md"><strong [class.admin]="admin">Backwarenbestellung</strong></li>
+        </ul>
+        <ul *ngIf="stage === 0">
+          <li><a role="button" class="unclickable" *ngIf="stage === 0"><em class="fas fa-calendar-day"></em></a></li>
+          <li><em class="fas fa-caret-right spacer"></em></li>
+          <li><a role="button" class="unclickable outline secondary"><em class="fas fa-shopping-cart"></em></a></li>
+        </ul>
+        <ul *ngIf="stage !== 0">
+          <li><a role="button" class="outline" routerLink="/date" aria-invalid="false"><em
+                class="fas fa-calendar-day"></em></a></li>
+          <li><em class="fas fa-caret-right spacer"></em></li>
+          <li><a role="button" class="unclickable"><em class="fas fa-shopping-cart"></em></a></li>
+        </ul>
+        <ul>
+          <li>
+            <dlb-timer></dlb-timer>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
+  <dlb-alert></dlb-alert>
 </div>
 <div class="spacer-top"></div>
 <router-outlet></router-outlet>

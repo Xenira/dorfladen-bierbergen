@@ -17,6 +17,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CommonModule } from './common/common.module';
 import { QrScanModalComponent } from './modals/qr-scan-modal/qr-scan-modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { QrScanModalComponent } from './modals/qr-scan-modal/qr-scan-modal.compo
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

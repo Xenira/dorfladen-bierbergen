@@ -5,11 +5,19 @@ import { ConfirmationModalComponent } from '../modals/confirmation-modal/confirm
 import { OrderModalComponent } from '../modals/order-modal/order-modal.component';
 import { OrderService } from '../common/services/order.service';
 import { ICategory, IItem, ItemService } from '../common/services/item.service';
+import {
+  slideInRightOnEnterAnimation,
+  slideInUpOnEnterAnimation,
+} from 'angular-animations';
 
 @Component({
   selector: 'dlb-selection',
   templateUrl: './selection.component.html',
   styleUrls: ['./selection.component.scss'],
+  animations: [
+    slideInUpOnEnterAnimation({ duration: 800 }),
+    slideInRightOnEnterAnimation(),
+  ],
 })
 export class SelectionComponent implements OnInit {
   categories: ICategory[] = [];

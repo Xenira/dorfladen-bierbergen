@@ -1,32 +1,34 @@
-<div class="container">
-  <article>
-    <label for="date">Bestellung zum
-      <input type="date" id="date" name="date" [min]="minDate" [(ngModel)]="startDate">
-    </label>
-
-    <fieldset>
-      <label for="abo">
-        <input type="checkbox" id="abo" name="abo" role="switch" [(ngModel)]="isAbo" (change)="lengthChange()">
-        Als Abo
+<div [@slideInRightOnEnter] [@fadeOutLeft]="slideOut" (@fadeOutLeft.done)="navigate($event)">
+  <div class="container">
+    <article>
+      <label for="date">Bestellung zum
+        <input type="date" id="date" name="date" [min]="minDate" [(ngModel)]="startDate">
       </label>
-    </fieldset>
-    <p *ngIf="isAbo">
-      <label for="abo-length">Abo länge (Wochen)</label>
-      <dlb-number-input id="abo-length" name="abo-length" [(value)]="aboLength" [min]="1"></dlb-number-input>
-    </p>
-    <div *ngIf="isAbo && startDate && aboLength">
-      <div *ngFor="let item of aboWeeks; let i = index" [class.odd]="i % 2 !== 0">
-        <dlb-week-select [date]="item.date" [(selected)]="item.days"></dlb-week-select>
-      </div>
-    </div>
-  </article>
 
-  <button (click)="scanQr()"><em class="fas fa-qrcode"></em>
-    QR-Code scannen</button>
+      <fieldset>
+        <label for="abo">
+          <input type="checkbox" id="abo" name="abo" role="switch" [(ngModel)]="isAbo" (change)="lengthChange()">
+          Als Abo
+        </label>
+      </fieldset>
+      <p *ngIf="isAbo">
+        <label for="abo-length">Abo länge (Wochen)</label>
+        <dlb-number-input id="abo-length" name="abo-length" [(value)]="aboLength" [min]="1"></dlb-number-input>
+      </p>
+      <div *ngIf="isAbo && startDate && aboLength">
+        <div *ngFor="let item of aboWeeks; let i = index" [class.odd]="i % 2 !== 0">
+          <dlb-week-select [date]="item.date" [(selected)]="item.days"></dlb-week-select>
+        </div>
+      </div>
+    </article>
+
+    <button (click)="scanQr()"><em class="fas fa-qrcode"></em>
+      QR-Code scannen</button>
+  </div>
+  <article class="footer flex space-between" *ngIf="startDate" [@slideInUpOnEnter]>
+    <button *ngIf="startDate" class="secondary outline" (click)="cancel()">Abbrechen</button>
+    <div class="spacer"></div>
+    <button *ngIf="isAbo" (click)="selectProducts()">Produkte für {{totalDays()}} Tage auswählen</button>
+    <button *ngIf="!isAbo" (click)="selectProducts()">Produkte auswählen</button>
+  </article>
 </div>
-<article class="footer flex space-between" *ngIf="startDate">
-  <button *ngIf="startDate" class="secondary outline" (click)="cancel()">Abbrechen</button>
-  <div class="spacer"></div>
-  <button *ngIf="isAbo" (click)="selectProducts()">Produkte für {{totalDays()}} Tage auswählen</button>
-  <button *ngIf="!isAbo" (click)="selectProducts()">Produkte auswählen</button>
-</article>

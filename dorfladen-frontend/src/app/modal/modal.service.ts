@@ -1,29 +1,40 @@
-import { Component, ComponentRef, Injectable, Type } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { ComponentRef, Injectable, Type } from '@angular/core';
+import { Observable } from 'rxjs';
 import { BaseModal } from './base-modal';
 
 export interface IModal<T> {
-  component: Type<any>,
+  component: Type<BaseModal<T>>;
   data: any;
+  ref?: BaseModal<T>;
   created: (ref: ComponentRef<T>) => void;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ModalService {
-
   public modals: IModal<any>[] = [];
 
-  constructor() { }
+  constructor() {}
 
-  openModal<T extends BaseModal<U>, U>(component: Type<T>, data: any = {}): Observable<U> {
+  openModal<T extends BaseModal<U>, U>(
+    component: Type<T>,
+    data: any = {}
+  ): Observable<U> {
     return new Observable((subscriber) => {
-      this.modals.push({ component, data, created: (ref: ComponentRef<T>) => ref.instance.onClose.subscribe(subscriber) });
-    })
+      this.modals.push({
+        component,
+        data,
+        created: (ref: ComponentRef<T>) =>
+          ref.instance.onClose.subscribe(subscriber),
+      });
+    });
   }
 
   closeModal() {
-    this.modals.pop();
+    const modal = this.modals.pop();
+    if (modal) {
+      modal.ref?.close();
+    }
   }
 }
