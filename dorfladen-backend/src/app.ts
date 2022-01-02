@@ -6,6 +6,7 @@ import passport from 'passport';
 import * as path from 'path';
 import KnexSessionStore from 'connect-session-knex';
 import knexInstance from './models/db';
+import RateLimit from 'express-rate-limit';
 
 // ####################################
 // Import routes and db inits
@@ -47,6 +48,14 @@ if (app.get('env') === 'production') {
 	(sessionConfig.cookie || {}).secure = true;
 }
 app.use(session(sessionConfig));
+
+// set up rate limiter: maximum of five requests per minute
+const limiter = RateLimit({
+	windowMs: 60_000, // 1 minute
+	max: 25,
+});
+
+app.use(limiter);
 
 app.use(passport.initialize());
 app.use(passport.session());
