@@ -1,6 +1,10 @@
 = Backwarenbestellung für Dorfladen Bierbergen
 :icons: font
 
+image:https://img.shields.io/github/workflow/status/xenira/dorfladen-bierbergen/Build%20and%20Deploy[GitHub Workflow Status]
+image:https://img.shields.io/github/languages/code-size/xenira/dorfladen-bierbergen[GitHub code size in bytes]
+image:https://img.shields.io/github/license/xenira/dorfladen-bierbergen[GitHub]
+
 WARNING: WIP. Not functional DEMO. Everzthing subject to change
 
 == Features
