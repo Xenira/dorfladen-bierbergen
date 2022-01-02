@@ -41,7 +41,7 @@ export class OrderService {
     const data = {
       days: this.days,
       items: this.items.map((i) => {
-        const minItem: Partial<Omit<IItem, 'description'>> = {
+        const minItem: Omit<IItem, 'description' | 'price'> = {
           id: i.id,
           count: i.count,
         };
