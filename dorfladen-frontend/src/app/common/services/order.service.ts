@@ -38,17 +38,22 @@ export class OrderService {
   // Compress data for qr code. Plain json with brotli seems to be most efficient
   // https://www.lucidchart.com/techblog/2019/12/06/json-compression-alternative-binary-formats-and-compression-methods/
   toBrotli(): Uint8Array | undefined {
-    console.log(this.brotli);
+    const data = {
+      days: this.days,
+      items: this.items.map((i) => {
+        const minItem: Partial<Omit<IItem, 'description'>> = {
+          id: i.id,
+          count: i.count,
+        };
+        if (i.comment) {
+          minItem.comment = i.comment;
+        }
+        return minItem;
+      }),
+      details: this.orderDetails,
+    };
     return this.brotli?.compress(
-      Uint8Array.from(
-        new TextEncoder().encode(
-          JSON.stringify({
-            days: this.days,
-            items: this.items.map((i) => ({ id: i.id, count: i.count })),
-            details: this.orderDetails,
-          })
-        )
-      )
+      Uint8Array.from(new TextEncoder().encode(JSON.stringify(data)))
     );
   }
 

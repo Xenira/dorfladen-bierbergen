@@ -5,6 +5,7 @@ export interface IItem {
   description: string;
   price: number;
   count?: number;
+  comment?: string;
 }
 
 export interface ICategory {

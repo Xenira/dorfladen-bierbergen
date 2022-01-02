@@ -1,9 +1,18 @@
-<div class="flex wrap-row space-between" *ngIf="item">
-  <div><strong>{{item?.description}}</strong></div>
-  <div class="flex count-ctrl">
-    <div class="ctext price">{{item?.price | price}}</div>
-    <dlb-number-input [(value)]="item.count" [min]="0"></dlb-number-input>
-    <div class="grow"></div>
-    <div class="ctext">{{item.price * (item.count || 0) | price }}</div>
+<div *ngIf="item">
+  <div class="flex center wrap-row space-between">
+    <div><strong>{{item?.description}}</strong></div>
+    <div class="flex center count-ctrl">
+      <em *ngIf="item.comment === undefined" class="comment" data-tooltip="Kommentar hinzufügen"
+        (click)="addComment()"><em class="fas fa-comment"></em></em>
+      <em *ngIf="item.comment !== undefined" class="comment" data-tooltip="Kommentar entfernen"
+        (click)="item.comment = undefined"><em class="fas fa-comment-slash"></em></em>
+      <div class="ctext price">{{item?.price | price}}</div>
+      <dlb-number-input [(value)]="item.count" [min]="0"></dlb-number-input>
+      <div class="grow"></div>
+      <div class="ctext">{{item.price * (item.count || 0) | price }}</div>
+    </div>
   </div>
+  <label for="comment-{{item.id}}"></label>
+  <textarea *ngIf="item.comment !== undefined" id="comment-{{item.id}}" name="comment-{{item.id}}"
+    [(ngModel)]="item.comment"></textarea>
 </div>

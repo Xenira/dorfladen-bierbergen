@@ -11,7 +11,8 @@ $breakpoints: (
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -25,6 +26,10 @@ html, body {
 
 .baseline {
   align-items: baseline;
+}
+
+.center {
+  align-items: center;
 }
 
 @media (max-width: map-get($breakpoints, "lg")) {
@@ -53,7 +58,7 @@ html, body {
 }
 
 label.optional::after {
-  content: ' - Optional';
+  content: " - Optional";
   font-size: small;
   color: var(--muted-color);
 }

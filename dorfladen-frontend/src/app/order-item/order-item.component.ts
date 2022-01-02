@@ -12,4 +12,10 @@ export class OrderItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  addComment() {
+    if (this.item && this.item.comment === undefined) {
+      this.item.comment = '';
+    }
+  }
 }
