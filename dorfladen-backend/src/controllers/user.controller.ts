@@ -29,7 +29,9 @@ export const register = [
 					req.login(user, (loginErr) => {
 						if (loginErr) {
 							console.error(
-								`Error logging in user ${user.name} ${user.email}`,
+								'Error logging in user',
+								user.name,
+								user.email,
 								loginErr
 							);
 							return res.sendStatus(500);
@@ -38,7 +40,7 @@ export const register = [
 					});
 				})
 				.catch((e) => {
-					console.error(`Error creating user ${user.name} ${user.email}`, e);
+					console.error('Error creating user', user.name, user.email, e);
 					return res.sendStatus(500);
 				});
 		});
