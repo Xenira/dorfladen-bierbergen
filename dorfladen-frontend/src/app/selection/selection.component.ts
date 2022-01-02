@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '../modal/modal.service';
-import { ConfirmationModalComponent } from '../modals/confirmation-modal/confirmation-modal.component';
-import { OrderModalComponent } from '../modals/order-modal/order-modal.component';
 import { OrderService } from '../common/services/order.service';
 import { ICategory, IItem, ItemService } from '../common/services/item.service';
 import {
+  fadeOutLeftAnimation,
   slideInRightOnEnterAnimation,
   slideInUpOnEnterAnimation,
 } from 'angular-animations';
+import { AnimationEvent } from '@angular/animations';
 
 @Component({
   selector: 'dlb-selection',
@@ -16,11 +16,13 @@ import {
   styleUrls: ['./selection.component.scss'],
   animations: [
     slideInUpOnEnterAnimation({ duration: 800 }),
+    fadeOutLeftAnimation({ duration: 400 }),
     slideInRightOnEnterAnimation(),
   ],
 })
 export class SelectionComponent implements OnInit {
   categories: ICategory[] = [];
+  slideOut = false;
 
   constructor(
     private itemService: ItemService,
@@ -64,16 +66,12 @@ export class SelectionComponent implements OnInit {
 
   order(): void {
     this.orderService.items = this.allItems().filter((i) => i.count);
-    this.modalService
-      .openModal<OrderModalComponent, void>(OrderModalComponent, {})
-      .subscribe(() => {
-        console.log('modal closed');
-        this.modalService
-          .openModal<ConfirmationModalComponent, boolean>(
-            ConfirmationModalComponent,
-            {}
-          )
-          .subscribe(() => {});
-      });
+    this.slideOut = true;
+  }
+
+  navigate(event: AnimationEvent) {
+    if ((event.toState as unknown) === true) {
+      this.router.navigateByUrl('/checkout');
+    }
   }
 }

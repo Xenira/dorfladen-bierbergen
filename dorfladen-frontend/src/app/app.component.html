@@ -7,16 +7,15 @@
           <li><img (dblclick)="admin = !admin" src="assets/logo.svg" /></li>
           <li class="hide-md"><strong [class.admin]="admin">Backwarenbestellung</strong></li>
         </ul>
-        <ul *ngIf="stage === 0">
-          <li><a role="button" class="unclickable" *ngIf="stage === 0"><em class="fas fa-calendar-day"></em></a></li>
+        <ul>
+          <li><a role="button" [class.unclickable]="stage === 0" [class.outline]="stage !== 0"><em
+                class="fas fa-calendar-day" routerLink="/date"></em></a></li>
           <li><em class="fas fa-caret-right spacer"></em></li>
-          <li><a role="button" class="unclickable outline secondary"><em class="fas fa-shopping-cart"></em></a></li>
-        </ul>
-        <ul *ngIf="stage !== 0">
-          <li><a role="button" class="outline" routerLink="/date" aria-invalid="false"><em
-                class="fas fa-calendar-day"></em></a></li>
+          <li><a role="button" [class.unclickable]="stage < 1" [class.secondary]="stage < 1"
+              [class.outline]="stage !== 1" routerLink="/select"><em class="fas fa-shopping-basket"></em></a></li>
           <li><em class="fas fa-caret-right spacer"></em></li>
-          <li><a role="button" class="unclickable"><em class="fas fa-shopping-cart"></em></a></li>
+          <li><a role="button" [class.unclickable]="stage < 2" [class.secondary]="stage < 2"
+              [class.outline]="stage !== 2"><em class="fas fa-receipt"></em></a></li>
         </ul>
         <ul>
           <li>
@@ -29,5 +28,5 @@
   <dlb-alert></dlb-alert>
 </div>
 <div class="spacer-top"></div>
-<router-outlet></router-outlet>
+<router-outlet #outlet=outlet (activate)="activate(outlet)"></router-outlet>
 <dlb-modal></dlb-modal>

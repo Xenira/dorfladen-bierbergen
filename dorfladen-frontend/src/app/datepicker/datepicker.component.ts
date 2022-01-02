@@ -143,7 +143,7 @@ export class DatepickerComponent implements OnInit {
   }
 
   navigate(event: AnimationEvent) {
-    if (event.toState) {
+    if ((event.toState as unknown) === true) {
       this.router.navigateByUrl('/select');
     }
   }

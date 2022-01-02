@@ -10,6 +10,10 @@
     border-bottom: 1px solid var(--secondary);
     z-index: 999;
     position: relative;
+
+    a[role="button"] {
+      width: 65px;
+    }
   }
 }
 

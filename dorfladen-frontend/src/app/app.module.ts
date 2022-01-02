@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModalComponent } from './modal/modal.component';
 import { OrderItemComponent } from './order-item/order-item.component';
-import { OrderModalComponent } from './modals/order-modal/order-modal.component';
 import { SelectionComponent } from './selection/selection.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { WeekSelectComponent } from './week-select/week-select.component';
@@ -18,13 +17,13 @@ import { environment } from '../environments/environment';
 import { CommonModule } from './common/common.module';
 import { QrScanModalComponent } from './modals/qr-scan-modal/qr-scan-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderItemComponent,
     ModalComponent,
-    OrderModalComponent,
     SelectionComponent,
     DatepickerComponent,
     WeekSelectComponent,
@@ -32,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminMenuComponent,
     NumberInputComponent,
     QrScanModalComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

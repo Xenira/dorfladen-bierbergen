@@ -1,27 +1,29 @@
-<div class="main" [@slideInRightOnEnter]>
-  <div class="container">
-    <article *ngFor="let category of categories">
-      <header>
-        <em class="fas fa-{{category.categoryIcon}}"></em> {{category.title}}
-      </header>
-      <p *ngFor="let item of category.items">
-        <dlb-order-item [item]="item"></dlb-order-item>
-      </p>
-    </article>
-  </div>
-</div>
-<article *ngIf="totalCount()" class="footer" [@slideInUpOnEnter]>
-  <div class="grid">
-    <div>Gesammt</div>
-    <div></div>
-    <div><span *ngIf="totalCount()">{{totalCount()}} stk.</span></div>
-    <div *ngIf="orderService.days.length > 1"><span *ngIf="totalCount()">x {{orderService.days.length}} tage</span>
+<div [@slideInRightOnEnter] [@fadeOutLeft]="slideOut" (@fadeOutLeft.done)="navigate($event)">
+  <div class="main">
+    <div class="container">
+      <article *ngFor="let category of categories">
+        <header>
+          <em class="fas fa-{{category.categoryIcon}}"></em> {{category.title}}
+        </header>
+        <p *ngFor="let item of category.items">
+          <dlb-order-item [item]="item"></dlb-order-item>
+        </p>
+      </article>
     </div>
-    <strong><u>{{totalPrice() | price}}</u></strong>
   </div>
-  <div class="flex">
-    <button class="secondary outline" (click)="reset()">Zurücksetzen</button>
-    <div class="spacer"></div>
-    <button (click)="order()" [disabled]="!totalCount()">Bestellen</button>
-  </div>
-</article>
+  <article *ngIf="totalCount()" class="footer" [@slideInUpOnEnter]>
+    <div class="grid">
+      <div>Gesammt</div>
+      <div></div>
+      <div><span *ngIf="totalCount()">{{totalCount()}} stk.</span></div>
+      <div *ngIf="orderService.days.length > 1"><span *ngIf="totalCount()">x {{orderService.days.length}} tage</span>
+      </div>
+      <strong><u>{{totalPrice() | price}}</u></strong>
+    </div>
+    <div class="flex">
+      <button class="secondary outline" (click)="reset()">Zurücksetzen</button>
+      <div class="spacer"></div>
+      <button (click)="order()" [disabled]="!totalCount()">Bestellen</button>
+    </div>
+  </article>
+</div>

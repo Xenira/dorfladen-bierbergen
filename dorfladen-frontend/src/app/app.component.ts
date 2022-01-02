@@ -5,8 +5,10 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { RouterOutlet } from '@angular/router';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { SelectionComponent } from './selection/selection.component';
 
 @Component({
   selector: 'dlb-root',
@@ -20,17 +22,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @ViewChild('demo') demo?: ElementRef<HTMLElement>;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.router.events
-      .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
-      .subscribe((event) => {
-        console.log(event['url']);
-        console.log(this.route.firstChild?.routeConfig?.path);
-        this.stage = event['url'] === '/date' ? 0 : 1;
-      });
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -38,5 +32,18 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.demo.nativeElement.remove();
       }
     }, 15_000);
+  }
+
+  activate(e: RouterOutlet) {
+    switch (e.activatedRoute.component) {
+      case DatepickerComponent:
+        this.stage = 0;
+        break;
+      case SelectionComponent:
+        this.stage = 1;
+        break;
+      case CheckoutComponent:
+        this.stage = 2;
+    }
   }
 }
