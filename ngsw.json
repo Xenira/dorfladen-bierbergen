@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641190484815,
+  "timestamp": 1641190498738,
   "index": "https://xenira.github.io/dorfladen-bierbergen/index.html",
   "assetGroups": [
     {
@@ -18,7 +18,7 @@
         "https://xenira.github.io/dorfladen-bierbergen/manifest.webmanifest",
         "https://xenira.github.io/dorfladen-bierbergen/polyfills.1ceaf056a322a0b6.js",
         "https://xenira.github.io/dorfladen-bierbergen/runtime.9f9fbce5a2f72df5.js",
-        "https://xenira.github.io/dorfladen-bierbergen/styles.8471f0e6dce7d559.css"
+        "https://xenira.github.io/dorfladen-bierbergen/styles.a12a01a6acfdae8d.css"
       ],
       "patterns": []
     },
@@ -68,12 +68,12 @@
     "https://xenira.github.io/dorfladen-bierbergen/fa-solid-900.d5b0a3566b352ee9.ttf": "eb8914f6b1797b45ee0883e6089d92695d9f9441",
     "https://xenira.github.io/dorfladen-bierbergen/fa-solid-900.e67670b0779338ff.woff": "a22acd7697f36e7d4cc31a853c70e776eac54bb1",
     "https://xenira.github.io/dorfladen-bierbergen/favicon.ico": "a804895d8ace06fdc44904d58d5f6f8fe4488c7d",
-    "https://xenira.github.io/dorfladen-bierbergen/index.html": "74bbc1c679a7332c831eb21d9eeb70e06f47e08c",
+    "https://xenira.github.io/dorfladen-bierbergen/index.html": "106cf9692f6ae066456e7e9cf5f5520bff60c62a",
     "https://xenira.github.io/dorfladen-bierbergen/main.b6e05f330ca42d1a.js": "4e281c4410e8eb4ab19929ee60139a499d03cc25",
     "https://xenira.github.io/dorfladen-bierbergen/manifest.webmanifest": "f59cb522db273664a5e02f9bfc651ee525627926",
     "https://xenira.github.io/dorfladen-bierbergen/polyfills.1ceaf056a322a0b6.js": "f387bbd71b5ca691922bcf7700e2a6fce035e1e7",
     "https://xenira.github.io/dorfladen-bierbergen/runtime.9f9fbce5a2f72df5.js": "0bcf75f2c782f6b98ee3c751365bf7b241a7c6fa",
-    "https://xenira.github.io/dorfladen-bierbergen/styles.8471f0e6dce7d559.css": "778528c43d398f36b9261dbf97283c6f5420092d"
+    "https://xenira.github.io/dorfladen-bierbergen/styles.a12a01a6acfdae8d.css": "d5785d297639931e1003d1350832bb0609c21f0e"
   },
   "navigationUrls": [
     {
