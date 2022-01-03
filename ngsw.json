@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641170143890,
+  "timestamp": 1641190404230,
   "index": "https://xenira.github.io/dorfladen-bierbergen/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "https://xenira.github.io/dorfladen-bierbergen/252.049894f8ab82fdb4.js",
         "https://xenira.github.io/dorfladen-bierbergen/favicon.ico",
         "https://xenira.github.io/dorfladen-bierbergen/index.html",
-        "https://xenira.github.io/dorfladen-bierbergen/main.dd8dd409b462fdc8.js",
+        "https://xenira.github.io/dorfladen-bierbergen/main.7311a15de7127ecd.js",
         "https://xenira.github.io/dorfladen-bierbergen/manifest.webmanifest",
         "https://xenira.github.io/dorfladen-bierbergen/polyfills.1ceaf056a322a0b6.js",
         "https://xenira.github.io/dorfladen-bierbergen/runtime.9f9fbce5a2f72df5.js",
@@ -68,8 +68,8 @@
     "https://xenira.github.io/dorfladen-bierbergen/fa-solid-900.d5b0a3566b352ee9.ttf": "eb8914f6b1797b45ee0883e6089d92695d9f9441",
     "https://xenira.github.io/dorfladen-bierbergen/fa-solid-900.e67670b0779338ff.woff": "a22acd7697f36e7d4cc31a853c70e776eac54bb1",
     "https://xenira.github.io/dorfladen-bierbergen/favicon.ico": "a804895d8ace06fdc44904d58d5f6f8fe4488c7d",
-    "https://xenira.github.io/dorfladen-bierbergen/index.html": "b2f5e919b1dfe3dcc3aa08ed2c91119b6c357091",
-    "https://xenira.github.io/dorfladen-bierbergen/main.dd8dd409b462fdc8.js": "c9d5b336ab462b40c03038ef332be667ff16495e",
+    "https://xenira.github.io/dorfladen-bierbergen/index.html": "3b7715dcdcbd26c303ec20b0eb39f5ad116ccb2d",
+    "https://xenira.github.io/dorfladen-bierbergen/main.7311a15de7127ecd.js": "351a013f5dd417086bed3d011f3f3fe0ef382c5b",
     "https://xenira.github.io/dorfladen-bierbergen/manifest.webmanifest": "f59cb522db273664a5e02f9bfc651ee525627926",
     "https://xenira.github.io/dorfladen-bierbergen/polyfills.1ceaf056a322a0b6.js": "f387bbd71b5ca691922bcf7700e2a6fce035e1e7",
     "https://xenira.github.io/dorfladen-bierbergen/runtime.9f9fbce5a2f72df5.js": "0bcf75f2c782f6b98ee3c751365bf7b241a7c6fa",
