@@ -16,7 +16,8 @@
       <div>Gesammt</div>
       <div></div>
       <div><span *ngIf="totalCount()">{{totalCount()}} stk.</span></div>
-      <div *ngIf="orderService.days.length > 1"><span *ngIf="totalCount()">x {{orderService.days.length}} tage</span>
+      <div *ngIf="orderService.days.length > 1"><span *ngIf="totalCount()"><em class="fas fa-times"></em>
+          {{orderService.days.length}} tage</span>
       </div>
       <strong><u>{{totalPrice() | price}}</u></strong>
     </div>

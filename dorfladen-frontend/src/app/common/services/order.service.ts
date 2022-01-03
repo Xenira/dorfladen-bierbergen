@@ -31,6 +31,13 @@ export class OrderService {
     this.days = days;
   }
 
+  totalPrice(): number {
+    return this.items.reduce(
+      (prev, curr) => prev + (curr.count || 0) * this.days.length * curr.price,
+      0
+    );
+  }
+
   reset() {
     this.days = [];
   }

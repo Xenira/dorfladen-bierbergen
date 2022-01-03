@@ -1,4 +1,4 @@
-<div [@slideInRightOnEnter]>
+<div [@slideInRightOnEnter] class="container">
   <article>
     <header>Bestellung abschließen</header>
     <!-- Grid -->
@@ -34,11 +34,13 @@
       </fieldset>
     </form>
   </article>
-  <article class="footer">
-    <div class="flex">
-      <button role="button" class="secondary" (click)="back()">Zurück</button>
-      <div class="spacer"></div>
-      <button (click)="order()" [disabled]="orderForm.invalid">Bestellen</button>
-    </div>
-  </article>
+
+  <dlb-order-summary></dlb-order-summary>
 </div>
+<article class="footer">
+  <div class="flex">
+    <button role="button" class="secondary" (click)="back()">Zurück</button>
+    <div class="spacer"></div>
+    <button (click)="order()" [disabled]="orderForm.invalid">Bestellen</button>
+  </div>
+</article>

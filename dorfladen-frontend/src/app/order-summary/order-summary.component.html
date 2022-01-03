@@ -1,0 +1,17 @@
+<article>
+  <header>Bestellzusammenfassung</header>
+  <div class="center">
+    <div *ngFor="let item of items" class="grid">
+      <span>{{item.description}}</span>
+      <span class="price">{{item.price | price}}</span>
+      <span><em class="fas fa-times"></em> {{(item.count || 0) * days}}</span>
+      <strong class="price">{{(item.count || 0) * days * item.price | price}}</strong>
+    </div>
+  </div>
+  <div class="grid">
+    <strong>Gesammt</strong>
+    <span></span>
+    <strong>{{totalCount()}}</strong>
+    <strong class="price"><u>{{totalPrice() | price}}</u></strong>
+  </div>
+</article>

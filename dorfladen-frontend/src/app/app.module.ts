@@ -18,6 +18,7 @@ import { CommonModule } from './common/common.module';
 import { QrScanModalComponent } from './modals/qr-scan-modal/qr-scan-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     NumberInputComponent,
     QrScanModalComponent,
     CheckoutComponent,
+    OrderSummaryComponent,
   ],
   imports: [
     BrowserModule,
