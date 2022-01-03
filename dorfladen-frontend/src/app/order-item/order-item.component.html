@@ -12,7 +12,6 @@
       <div class="ctext">{{item.price * (item.count || 0) | price }}</div>
     </div>
   </div>
-  <label for="comment-{{item.id}}"></label>
   <textarea *ngIf="item.comment !== undefined" id="comment-{{item.id}}" name="comment-{{item.id}}"
-    [(ngModel)]="item.comment"></textarea>
+    [(ngModel)]="item.comment" placeholder="Ihr Kommentar"></textarea>
 </div>

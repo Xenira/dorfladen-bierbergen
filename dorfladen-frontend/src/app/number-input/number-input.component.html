@@ -1,5 +1,6 @@
 <div class="input-container">
-  <button (click)="add(-1)"><em class="fas fa-minus"></em></button>
-  <input type="number" [(ngModel)]="value" autocomplete="off">
-  <button (click)="add(1)"><em class="fas fa-plus"></em></button>
+  <button (click)="add(-1)" [disabled]="min !== undefined && (value || 0) <= min"><em
+      class="fas fa-minus"></em></button>
+  <input type="number" [(ngModel)]="value" autocomplete="off" (blur)="add(0)">
+  <button (click)="add(1)" [disabled]="max !== undefined && (value || 0) >= max"><em class="fas fa-plus"></em></button>
 </div>
