@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652161094646,
+  "timestamp": 1652161098042,
   "index": "https://xenira.github.io/dorfladen-bierbergen/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "https://xenira.github.io/dorfladen-bierbergen/252.361180abdcc56456.js",
         "https://xenira.github.io/dorfladen-bierbergen/favicon.ico",
         "https://xenira.github.io/dorfladen-bierbergen/index.html",
-        "https://xenira.github.io/dorfladen-bierbergen/main.f8ba01e3462c9180.js",
+        "https://xenira.github.io/dorfladen-bierbergen/main.fbb61061e357ab9b.js",
         "https://xenira.github.io/dorfladen-bierbergen/manifest.webmanifest",
         "https://xenira.github.io/dorfladen-bierbergen/polyfills.43feb76f73f7346e.js",
         "https://xenira.github.io/dorfladen-bierbergen/runtime.f317427e2997e153.js",
@@ -64,8 +64,8 @@
     "https://xenira.github.io/dorfladen-bierbergen/fa-solid-900.3a463ec33b4fe9f7.ttf": "9225d6cb428fce41704cab29b8bb43b76c67f8b4",
     "https://xenira.github.io/dorfladen-bierbergen/fa-solid-900.40ddefd79fe7af45.woff2": "2717f3f58271f2f2e6120d9937c7227002656d34",
     "https://xenira.github.io/dorfladen-bierbergen/favicon.ico": "a804895d8ace06fdc44904d58d5f6f8fe4488c7d",
-    "https://xenira.github.io/dorfladen-bierbergen/index.html": "276f24895d13793903986dc2823e31889b0d6a3d",
-    "https://xenira.github.io/dorfladen-bierbergen/main.f8ba01e3462c9180.js": "e80a868132cbe834892f00db78d91fe2d0c1b67c",
+    "https://xenira.github.io/dorfladen-bierbergen/index.html": "b3dfec4e930184b3b9e15f11383da5dba050fff7",
+    "https://xenira.github.io/dorfladen-bierbergen/main.fbb61061e357ab9b.js": "a5305403db219474840af9b6c049b52cbe3f777b",
     "https://xenira.github.io/dorfladen-bierbergen/manifest.webmanifest": "f59cb522db273664a5e02f9bfc651ee525627926",
     "https://xenira.github.io/dorfladen-bierbergen/polyfills.43feb76f73f7346e.js": "c2b06787ba1d7cb2dc3c754df5bf6f013cb86298",
     "https://xenira.github.io/dorfladen-bierbergen/runtime.f317427e2997e153.js": "fd4b94a82d80cf8bd8dc41547750b0606ceac3f5",
